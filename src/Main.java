@@ -1,14 +1,12 @@
 public class Main {
     public static void main(String[] args) {
-        BST<Integer, String> bst = new BST();
-        int i = 0;
-        while (i < 15) {
-            bst.put(i, "Value " + i);
-            i++;
+        BST<Integer, Integer> bst = new BST<>();
+        for (int i = 5; i < 10; i++){
+            bst.put(i, i);
         }
-        Iterable it = bst.iterator();
-        for(Object el: it) {
-            System.out.println(el);
+        for (int i = 0; i < 5; i++){
+            bst.put(i, i);
         }
+        System.out.println(bst.contains(3));
     }
 }

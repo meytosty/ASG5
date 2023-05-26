@@ -148,4 +148,26 @@ public class BST<K extends Comparable<K>, V> {
         }
         return list;
     }
+    public boolean contains(V val1){
+        Node res = contains_work(val1, root);
+        return res.val == val1;
+    }
+    private Node contains_work(V val1, Node root){
+        if (root == null){
+            return null;
+        }
+        if (root.left != null){
+            if (root.left.val == val1){
+                return root.left;
+            }
+            return contains_work(val1, root.left);
+        }
+        if (root.right != null){
+            if (root.right.val == val1){
+                return root.right;
+            }
+            return contains_work(val1, root.right);
+        }
+        return null;
+    }
 }
